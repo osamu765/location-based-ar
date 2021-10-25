@@ -57,8 +57,8 @@ var setModel = function (model, entity) {
 
     entity.setAttribute('gltf-model', model.url);
 
-    const div = document.querySelector('.instructions');
-    div.innerText = model.info;
+    //const div = document.querySelector('.instructions');
+    //div.innerText = model.info;
 };
 
 function renderPlaces(places) {
@@ -78,6 +78,8 @@ function renderPlaces(places) {
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
             const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
             console.log(distanceMsg);   // "890 meters"
+            const div = document.querySelector('.instructions');
+            div.innerText = distanceMsg;
             var entity = document.querySelector('[gps-entity-place]');
             modelIndex++;
             var newIndex = modelIndex % models.length;
