@@ -76,6 +76,8 @@ function renderPlaces(places) {
         model.setAttribute('animation-mixer', '');
 
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
+            const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
+            console.log(distanceMsg);   // "890 meters"
             var entity = document.querySelector('[gps-entity-place]');
             modelIndex++;
             var newIndex = modelIndex % models.length;
