@@ -88,7 +88,7 @@ function renderPlaces(places) {
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
         setModel(models[modelIndex], model);
-
+		modelIndex++;
         model.setAttribute('animation-mixer', '');
 
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
@@ -97,9 +97,9 @@ function renderPlaces(places) {
             const div = document.querySelector('.instructions');
             div.innerText = distanceMsg;
             var entity = document.querySelector('[gps-entity-place]');
-            modelIndex++;
-            var newIndex = modelIndex % models.length;
-            setModel(models[newIndex], entity);
+            // modelIndex++;
+            // var newIndex = modelIndex % models.length;
+            // setModel(models[newIndex], entity);
         });
 
         scene.appendChild(model);
